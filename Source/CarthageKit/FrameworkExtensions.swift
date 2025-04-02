@@ -311,7 +311,7 @@ extension URL {
 				// Only read the first 1024 bytes which should include the first line
 				let fileHandle = try FileHandle(forReadingFrom: url)
 				defer { fileHandle.closeFile() }
-				
+
 				let data = fileHandle.readData(ofLength: 1024)
 				guard !data.isEmpty,
 				      let firstChunk = String(data: data, encoding: .utf8) else {
